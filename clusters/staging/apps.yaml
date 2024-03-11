@@ -8,8 +8,6 @@ spec:
   sourceRef:
     kind: GitRepository
     name: flux-system
-    ref:
-      branch: main
   path: ./builds/staging
   prune: true
   wait: true
@@ -40,8 +38,6 @@ spec:
   sourceRef:
     kind: GitRepository
     name: flux-system
-    ref:
-      branch: main
   path: ./builds/production
   prune: true
   wait: true
