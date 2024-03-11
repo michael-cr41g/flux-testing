@@ -4,10 +4,6 @@ resources:
   - ./apps/staging
   - ./builds/base
 patches:
-  - patch: |-
-      apiVersion: v1
-      kind: Namespace
-      metadata:
-        name: someApp-staging
+  - path: namespace.yaml
     target:
       kind: Namespace
