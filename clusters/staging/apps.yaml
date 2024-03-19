@@ -12,7 +12,7 @@ metadata:
 spec:
   interval: 1m0s
   ref:
-    branch: fluxCapacitor
+    branch: back-to-the-future
   url: https://gitlab.com/surfliner/surfliner/
   ignore: |
     # exclude all
