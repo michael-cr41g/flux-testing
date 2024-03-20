@@ -1,0 +1,30 @@
+---
+apiVersion: source.toolkit.fluxcd.io/v1
+kind: GitRepository
+metadata:
+  name: repo-dlc-review
+  namespace: flux-system
+spec:
+  interval: 1m0s
+  ref:
+    branch: back-to-the-future
+  url: https://gitlab.com/surfliner/surfliner/
+  ignore: |
+    # exclude all
+    /*
+    # include deploy dir
+    !/daylight/frontend/flux
+---
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: kustomize-dlc-review
+  namespace: flux-system
+spec:
+  interval: 10m
+  sourceRef:
+    kind: GitRepository
+    name: repo-dlc-review
+  path: "./daylight/frontend/flux"
+  prune: true
+  timeout: 1m
